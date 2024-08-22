@@ -66,6 +66,7 @@ export default function Home() {
     <main>
       <div className="header">Ranking</div>
       <div className="music-player">{randomTrack.name}</div>
+      <div style={{ paddingTop: "1rem" }}></div>
       <div className="places">
         {places.map((place, index) => {
           return (
