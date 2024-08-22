@@ -47,7 +47,7 @@ export default function Home() {
 
   const [places, setPlaces] = useState<Array<MusicTrack | null>>([
     null,
-    tracks[0],
+    null,
     null,
     null,
     null,
