@@ -49,3 +49,7 @@ body {
   background-color: #ccc;
   margin-inline: auto;
 }
+.refresh-button {
+  text-align: right;
+  font-size: 2rem;
+}

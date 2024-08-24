@@ -27,6 +27,10 @@ function Place(props: PlaceProps) {
 }
 
 export default function Home() {
+  const reloadPage = () => {
+    window.location.reload();
+  };
+
   const [tracks, deleteTrack] = useState<Array<MusicTrack>>([
     { id: "1", name: "Music1" },
     { id: "2", name: "Music2" },
@@ -45,6 +49,7 @@ export default function Home() {
     randomNum = Math.trunc(Math.random() * tracks.length);
     randomTrack = tracks.at(randomNum);
   }
+
   if (randomTrack === undefined) {
     throw new Error("Its cant be possible");
   }
@@ -84,6 +89,9 @@ export default function Home() {
             ></Place>
           );
         })}
+      </div>
+      <div className="refresh-button">
+        <button onClick={reloadPage}>Refresh</button>
       </div>
     </main>
   );
