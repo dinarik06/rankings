@@ -27,7 +27,7 @@ function Place(props: PlaceProps) {
 }
 
 export default function Home() {
-  const tracks: Array<MusicTrack> = [
+  const [tracks, deleteTrack] = useState<Array<MusicTrack>>([
     { id: "1", name: "Music1" },
     { id: "2", name: "Music2" },
     { id: "3", name: "Music3" },
@@ -38,13 +38,16 @@ export default function Home() {
     { id: "8", name: "Music8" },
     { id: "9", name: "Music9" },
     { id: "10", name: "Music10" },
-  ];
-  const randomNum = Math.trunc(Math.random() * tracks.length);
-  const randomTrack = tracks.at(randomNum);
+  ]);
+  let randomNum = Math.trunc(Math.random() * tracks.length);
+  let randomTrack = tracks.at(randomNum);
+  while (randomTrack === undefined) {
+    randomNum = Math.trunc(Math.random() * tracks.length);
+    randomTrack = tracks.at(randomNum);
+  }
   if (randomTrack === undefined) {
     throw new Error("Its cant be possible");
   }
-
   const [places, setPlaces] = useState<Array<MusicTrack | null>>([
     null,
     null,
@@ -59,7 +62,10 @@ export default function Home() {
     }
     const newValue = [...places];
     newValue[index] = randomTrack;
+    const newTracks = [...tracks];
+    delete newTracks[randomNum];
     setPlaces(newValue);
+    deleteTrack(newTracks);
   }
 
   return (
