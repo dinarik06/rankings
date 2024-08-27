@@ -48,8 +48,10 @@ body {
   aspect-ratio: 16 / 9;
   background-color: #ccc;
   margin-inline: auto;
+  text-align: center;
 }
 .refresh-button {
-  text-align: right;
+  margin-top: 1rem;
+  text-align: center;
   font-size: 2rem;
 }
