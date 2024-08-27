@@ -75,7 +75,7 @@ export default function Home() {
         {places.includes(null) ? (
           <VideoPlayer videoUrl={randomTrack.link} />
         ) : (
-          <p>That's all</p>
+          <p>Thats all</p>
         )}
       </div>
       <div style={{ paddingTop: "1rem" }}></div>
