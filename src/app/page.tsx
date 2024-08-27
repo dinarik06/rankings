@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import VideoPlayer from "/home/dinar/myprojects/rankings/src/app/VideoPlayer.js";
+import VideoPlayer from "./VideoPlayer.js";
 
 type MusicTrack = {
   id: number;
