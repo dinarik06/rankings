@@ -36,7 +36,7 @@ export default function Home() {
   const [tracks, deleteTrack] = useState<Array<MusicTrack>>(
     require("./data.json")
   );
-  console.log(tracks);
+
   let randomNum = Math.trunc(Math.random() * tracks.length);
 
   let randomTrack = tracks.at(randomNum);
