@@ -61,7 +61,7 @@ export default function MyApp(props: MyAppProps) {
     const newValue = [...places];
     newValue[index] = randomTrack;
     const newTracks = [...tracks];
-    delete newTracks[randomNum];
+    newTracks.splice(randomNum, 1);
     setPlaces(newValue);
     setTracks(newTracks);
   }
