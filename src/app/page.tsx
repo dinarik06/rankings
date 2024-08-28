@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import VideoPlayer from "./VideoPlayer.js";
+import VideoPlayer from "@/components/VideoPlayer";
+import data from "@/app/data.json";
 
 type MusicTrack = {
   id: number;
@@ -33,9 +34,7 @@ export default function Home() {
     window.location.reload();
   };
 
-  const [tracks, deleteTrack] = useState<Array<MusicTrack>>(
-    require("./data.json")
-  );
+  const [tracks, setTracks] = useState<Array<MusicTrack>>(data);
 
   let randomNum = Math.trunc(Math.random() * tracks.length);
 
@@ -65,7 +64,7 @@ export default function Home() {
     const newTracks = [...tracks];
     delete newTracks[randomNum];
     setPlaces(newValue);
-    deleteTrack(newTracks);
+    setTracks(newTracks);
   }
 
   return (
