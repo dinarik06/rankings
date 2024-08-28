@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "drizzle-kit migrate && next build",
+    "generate-migrations": "drizzle-kit generate",
+    "run-migrations": "drizzle-kit migrate",
     "start": "next start",
     "lint": "next lint"
   },
