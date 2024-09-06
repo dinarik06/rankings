@@ -43,9 +43,6 @@ export default function MyApp(props: MyAppProps) {
 
   let randomTrack = tracks.at(randomNum);
 
-  if (randomTrack === undefined) {
-    throw new Error("No tracks left");
-  }
   const [places, setPlaces] = useState<Array<MusicTrack | null>>([
     null,
     null,
@@ -70,7 +67,8 @@ export default function MyApp(props: MyAppProps) {
     <main>
       <div className="header">Ranking</div>
       <div className="music-player">
-        {places.includes(null) ? (
+        {(places.includes(null) || tracks.length || tracks) &&
+        randomTrack != undefined ? (
           <VideoPlayer videoUrl={randomTrack.link} />
         ) : (
           <p>That&apos;s all</p>
